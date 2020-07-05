@@ -2,33 +2,58 @@
 #include <stdlib.h>
 #include "ft_putchar.c"
 
-void rush(int l, int h){
-	int i_l = 0;
-	int i_h = 0;
-	
+void print1(int a_y, int a_x, int x, int y){
+	if (a_y == 0 || a_y == y-1)
+	{
+	ft_putchar('-');
+	}
+	else
+	{
+		ft_putchar(' ');
+	}
+}
 
-	while (i_h < h){
-		
-		if (i_h == 0 || i_h == h-1){
+void rush(int x, int y)
+{
+	int a_x;
+	int a_y;
+	a_x = 0;
+	a_y = 0;
+	while (a_y < y)
+	{
+		if (a_y == 0 || a_y == y-1)
+		{
 			ft_putchar('o');
 		}
-		else {
+		else
+		{
 			ft_putchar('|');
 		}
-		while (i_l < l){
-			if (i_l > 0) {
-
-				if (i_l == l-1){
+		while(a_x < x)
+		{
+			if (a_x != 0)
+			{
+				if (a_x == x-1)
+				{
+					if(a_y == 0 || a_y == y-1)
+					{
 					ft_putchar('o');
+					}
+					else
+					{
+						ft_putchar('|');
+					}
 				}
-				else {
-					ft_putchar('-');
+				else 
+				{
+					print1(a_y, a_x, x, y);
 				}
 			}
-			i_l++;
-
+			a_x++;
 		}
-		i_h++;
+		a_y++;
+		a_x=0;
 		ft_putchar('\n');
 	}
 }
+

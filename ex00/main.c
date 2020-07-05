@@ -16,6 +16,8 @@ int main()
 	rush(5,1);
 	
     printf("\n\nrush(5,5)\n");
-	rush(5,5);
+	rush(5,5);	
+    printf("\n\nrush(25,25)\n");
+	rush(25,25);
     return 0;
 }
